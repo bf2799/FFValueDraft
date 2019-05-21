@@ -1,3 +1,5 @@
+import org.apache.commons.compress.utils.IOUtils;
+
 import java.io.IOException;
 
 public class MainTest {
@@ -10,11 +12,13 @@ public class MainTest {
             team1.readFantasyTeam();
             team1.generateFantasyTeam();
             team1.writeFantasyTeam();
+            SpreadsheetSettings.openInputStream();
+            SpreadsheetSettings.workbook.write(SpreadsheetSettings.excelOut);
         } catch (Exception e) {
             e.printStackTrace();
         } finally {
-            SpreadsheetSettings.excelIn.close();
-            SpreadsheetSettings.excelOut.close();
+            IOUtils.closeQuietly(SpreadsheetSettings.excelIn);
+            IOUtils.closeQuietly(SpreadsheetSettings.excelOut);
         }
     }
 }

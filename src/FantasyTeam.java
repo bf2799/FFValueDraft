@@ -336,8 +336,6 @@ public class FantasyTeam {
                     .getCell(4).setCellValue(teamBench.get(bn));
         }
 
-        SpreadsheetSettings.workbook.write(SpreadsheetSettings.excelOut);
-
     }
 
 }
