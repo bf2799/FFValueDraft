@@ -52,7 +52,7 @@ public class Spreadsheet {
         masterExcelIn = new FileInputStream(masterSheetFile);
         masterWorkbook = new XSSFWorkbook(masterExcelIn);
         leagueSettingsSheet = masterWorkbook.getSheet("League Settings");
-        liveDraftSheet = masterWorkbook.getSheet("Live Draft");
+        liveDraftSheet = masterWorkbook.getSheet("Live Draft Picks");
         defaultRankingsSheet = masterWorkbook.getSheet("Default Rankings");
         fantasyTeamsSheet = masterWorkbook.getSheet("Fantasy Teams");
     }
@@ -106,7 +106,7 @@ public class Spreadsheet {
     }
 
     // Spreadsheet-labeled row where the draft log starts in the spreadsheet
-    public static final int DRAFT_LOG_START_ROW = 81;
+    public static final int DRAFT_LOG_START_ROW = 3;
 
     // Spreadsheet-labeled row where the fantasy teams start in the spreadsheet
     public static final int FANTASY_TEAM_START_ROW = 3;
